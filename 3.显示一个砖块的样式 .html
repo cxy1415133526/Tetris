@@ -15,26 +15,39 @@
             border: 1px solid #000;
             
         }
-        td.c1{
-            background-color: red;
+        td.c1 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(182, 44, 44), rgb(250, 6, 6));
         }
-        td.c2{
-            background-color: orange;
+
+        td.c2 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(255, 157, 0), rgb(230, 201, 42));
         }
-        td.c3{
-            background-color: yellow;
+
+        td.c3 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(239, 243, 6), rgb(213, 243, 41));
         }
-        td.c4{
-            background-color: green;
+
+        td.c4 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(11, 246, 3), rgb(94, 235, 129));
         }
-        td.c5{
-            background-color: aqua;
+
+        td.c5 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(0, 225, 255), rgb(62, 233, 248));
         }
-        td.c6{
-            background-color: blue;
+
+        td.c6 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(0, 98, 255), rgb(79, 137, 243));
         }
-        td.c7{
-            background-color: purple;
+
+        td.c7 {
+            /* 以后学习渐变色，你先抄老师的 */
+            background: -webkit-linear-gradient(bottom right, rgb(98, 0, 255), rgb(146, 78, 235));
         }
     </style>
 </head>
@@ -61,30 +74,29 @@
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
     </table>
-    <button id="btn1">1</button>
-    <button id="btn2">2</button>
-    <button id="btn3">3</button>
-    <button id="btn4">4</button>
+
     <script>
-        var btn1=document.getElementById('btn1');
-        var btn2=document.getElementById('btn2');
-        var btn3=document.getElementById('btn3');
-        var btn4=document.getElementById('btn4');
+        
         var table=document.getElementById('table');
         function drawcolor(a,b,sehao){
             table.getElementsByTagName('tr')[a].getElementsByTagName('td')[b].className='c'+sehao;
         }
-        btn1.onclick=function(){
-            drawcolor(2,0,3);
-        }
-        btn2.onclick=function(){
-            drawcolor(2,1,3);
-        }
-        btn3.onclick=function(){
-            drawcolor(3,1,3);
-        }
-        btn4.onclick=function(){
-            drawcolor(4,1,3);
+        
+        //做一个二维数组表示砖块
+        var zhuankuai=[
+            [0,1,0,0],
+            [0,1,0,0],
+            [0,1,1,0],
+            [0,0,0,0],
+        ]
+        var hang=0;
+        var lie=4;
+        for(var i=0;i<4;i++){
+            for(var j=0;j<4;j++){
+                if(zhuankuai[i][j]!=0){
+                    drawcolor(i+hang,j+lie,zhuankuai[i][j]);
+                }
+            }
         }
     </script>
 </body>
