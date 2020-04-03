@@ -40,6 +40,7 @@
 </head>
 <body>
     <table id="table">
+        <!-- <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -58,19 +59,26 @@
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr> -->
     </table>
     <button id="btn1">1</button>
     <button id="btn2">2</button>
     <button id="btn3">3</button>
     <button id="btn4">4</button>
     <script>
+        var table=document.getElementById('table');
+        for(var i=0;i<20;i++){
+            var tr=document.createElement('tr');
+            for(var j=0;j<12;j++){
+                var td=document.createElement('td');
+            tr.appendChild(td);
+            }
+        table.appendChild(tr);
+        }
         var btn1=document.getElementById('btn1');
         var btn2=document.getElementById('btn2');
         var btn3=document.getElementById('btn3');
         var btn4=document.getElementById('btn4');
-        var table=document.getElementById('table');
         function drawcolor(a,b,sehao){
             table.getElementsByTagName('tr')[a].getElementsByTagName('td')[b].className='c'+sehao;
         }
